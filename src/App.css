@@ -1,3 +1,5 @@
+@import "bootstrap/dist/css/bootstrap.css";
+
 .App {
   text-align: center;
 }
@@ -6,6 +8,12 @@
   height: 40vmin;
   pointer-events: none;
 }
+
+.App-logo2 {
+  height: 85px;
+  cursor: pointer;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -35,4 +43,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.subtitleStyle {
+  font-style: italic;
+  font-size: xx-large;
+  color: #1b396a;/*"coral",*/
+  margin-top: 1rem !important;
+}
+
+.themeFontColor {
+  color: #1b396a /*coral;*/
+}
+
+tr {
+  cursor: pointer;
+}
+
+.section {
+  border-radius: 25px;
+  border: 2px solid #1b396a;
+  padding: 20px;
+  width: 98%;
+  align-content: center;
+  /* height: 150px; */
+  margin-top: 5px;
+  margin-bottom: auto;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.label {
+  font-size: larger;
+  font-weight: bold;
 }
