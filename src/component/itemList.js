@@ -137,8 +137,8 @@ const ItemList = ( props ) => {
 
             let itemJSON = JSON.parse(itemString);
             console.log(itemJSON);
-            
-            // *********************** TODO: CALL API ***********************
+
+            // *********************** TODO: CALL NODE API ***********************
             
 
         }
