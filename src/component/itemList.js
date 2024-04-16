@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import Modal from 'react-modal';
 import ItemRow from "./itemRow";
 
@@ -50,7 +51,7 @@ const ItemList = ( props ) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [meal, setMeal] =  useState("⬇️ Select a Meal ⬇️");
     const [number, setNumber] = useState("⬇️ Quantity ⬇️");
-  
+
     let handleMealChange = (e) => {
         setMeal(e.target.value)
       }
@@ -113,13 +114,13 @@ const ItemList = ( props ) => {
         else
         {
             setItems([
-                ...items,
                 {
                     id: items.length+1,
                     description: meal,
                     quantity: number,
                     price: 10*number,
                 },
+                ...items,
             ]);
             setIsOpen(false);
 
@@ -135,10 +136,10 @@ const ItemList = ( props ) => {
             itemString += `}`; 
 
             let itemJSON = JSON.parse(itemString);
-
-            // TODO: CALL API ***********************+
-
             console.log(itemJSON);
+            
+            // *********************** TODO: CALL API ***********************
+            
 
         }
         e.preventDefault();
@@ -147,6 +148,11 @@ const ItemList = ( props ) => {
   
     return (
       <>
+        <div>
+          <button className="btn btn-primary" onClick={openModal}>
+            Add
+          </button>
+        </div>
         <table className="table table-hover">
           <thead>
             <tr>
@@ -162,9 +168,6 @@ const ItemList = ( props ) => {
           </tbody>
         </table>
         <div className="col-1" id="main2">
-        <button className="btn btn-primary" onClick={openModal}>
-          Add
-        </button>
         <Modal
             isOpen={modalIsOpen}
             onAfterOpen={afterOpenModal}
